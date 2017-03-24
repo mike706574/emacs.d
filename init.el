@@ -96,6 +96,7 @@
 
     ;; elixir
     elixir-mode
+    alchemist
 
     ;; fsharp
     fsharp-mode
@@ -165,6 +166,7 @@
 
 ;; Language-specific
 (load "setup-clojure.el")
+(load "setup-elixir.el")
 (load "setup-groovy.el")
 (load "setup-js.el")
 (load "setup-misc-programming.el")
