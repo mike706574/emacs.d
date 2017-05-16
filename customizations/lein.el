@@ -12,9 +12,9 @@
 
 (defun lein-tree ()
   (interactive)
-  (lein-in-project (lambda (d) (compile (concat "lein do clean, pom; mvn -Dverbose=true dependency:tree")))))
+  (lein-in-project (lambda (d) (compile (concat "lein deps :tree")))))
 
-(defun lein-updates ()
+(defun lein-ancient ()
   (interactive)
   (lein-in-project (lambda (d) (compile (concat "lein ancient")))))
 
@@ -30,4 +30,4 @@
       (if (s-blank? input) default-term input))))
   (lein-in-project
    (lambda (d)
-     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target -nriH -e \"" term "\" " d)))))
+     (grep (concat "grep --color --exclude=\*.{js,map,json} --exclude-dir=.git --exclude-dir=target -nriH -e \"" term "\" " d)))))

@@ -243,8 +243,8 @@ Paredit behaves badly if parentheses are unbalanced, so exercise
 
 (defvar paredit-forward-delete-keys
   (xcond ((paredit-xemacs-p)    '("DEL"))
-         ((paredit-gnu-emacs-p) '("<delete>" "<deletechar>"))))
-
+         ((paredit-gnu-emacs-p) '("<delete>"))))
+
 ;;;; Paredit Keys
 
 ;;; Separating the definition and initialization of this variable

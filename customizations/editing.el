@@ -49,6 +49,7 @@
   "comment or uncomment current line"
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 ;; use 2 spaces for tabs
@@ -136,14 +137,13 @@
     (unset-slowpoke-keys)
     (set-slowpoke-keys)))
 
-
 ;; Bind keys to work like pgup and pgdn
 (global-set-key (kbd "M-n") 'scroll-up-command)
 (global-set-key (kbd "M-p") 'scroll-down-command)
 
 ;; Binds for SSH terminal use
-;; (global-set-key (kbd "<deletechar>") 'backward-kill-word)
-;; (global-set-key (kbd "TAB") 'indent-for-tab-command)
+(global-set-key (kbd "<deletechar>") 'backward-kill-word)
+(global-set-key (kbd "TAB") 'indent-for-tab-command)
 
 (global-set-key (kbd "M-i") 'paredit-backward-slurp-sexp)
 (global-set-key (kbd "M-o") 'paredit-forward-slurp-sexp)

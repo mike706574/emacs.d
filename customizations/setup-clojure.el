@@ -54,7 +54,8 @@
   '(progn
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
-     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
+     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)
+     (define-key cider-repl-mode-map (kbd "C-c f") 'cider-repl-clear-buffer)))
 
 ;; Autocomplete
 (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
@@ -70,12 +71,20 @@
 (put-clojure-indent 'fdef 1)    ;; clojure.spec
 (put-clojure-indent 'for-all 1) ;; clojure.test.check
 
+(put-clojure-indent 'if-not-let 1) ;; me
+(put-clojure-indent 'handle-exceptions 1) ;; me
+(put-clojure-indent 'breakdown 1) ;; me
+(put-clojure-indent 'unpack-response 1) ;; me
+(put-clojure-indent 'with-body 1) ;; me
+(put-clojure-indent 'guard-event 1) ;; me
+
 ;; ClojureScript REPL
 (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 
 ;; When there's an error, show its buffer and switch to it
 (setq cider-show-error-buffer t)
 (setq cider-auto-select-error-buffer t)
+
 
 ;; Toggles cider-error buffer pop-up on exceptions
 (defun cider-toggle-auto-select-error-buffer ()
@@ -87,3 +96,5 @@
       (progn
         (setq cider-auto-select-error-buffer t)
         (message "Enabled."))))
+
+(setq cider-pprint-fn 'pprint)

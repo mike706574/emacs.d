@@ -1,4 +1,3 @@
-
 ;; Packages
 (require 'package)
 (add-to-list 'package-archives
@@ -85,11 +84,14 @@
     ;; make the mode line look neat
     powerline
 
+    company
+
     ;; turn off line numbering sometimes
     linum-off
 
     ;; haskell
     haskell-mode
+    hindent
 
     ;; erlang
     erlang
@@ -98,6 +100,9 @@
     elixir-mode
     alchemist
 
+    ;; elm
+    elm-mode
+
     ;; fsharp
     fsharp-mode
     ))
@@ -105,7 +110,6 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.
@@ -155,9 +159,6 @@
 (load "maven.el")
 (load "lein.el")
 
-;; Work-specific functions
-(load "work.el")
-
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
@@ -168,14 +169,10 @@
 (load "setup-clojure.el")
 (load "setup-elixir.el")
 (load "setup-groovy.el")
+(load "setup-haskell.el")
 (load "setup-js.el")
 (load "setup-misc-programming.el")
-
-;; IRC
-(load "irc.el")
-
-;; Cool webkit browser inside emacs
-(load "webkit.el")
+(load "setup-web.el")
 
 ;; I like doing dangerous things
 (put 'downcase-region 'disabled nil)
@@ -184,21 +181,21 @@
 
 ;; Custom variables
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+ ;; Haskell
+ '(haskell-process-type 'cabal-repl)
+
+ ;; Clojure
+ '(cljr-favor-prefix-notation nil)
+
  '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
- '(cljr-favor-prefix-notation nil)
+
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
     ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
  '(magit-git-executable "/usr/bin/git"))
+
+;; Custom faces
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(column-marker-3 ((t (:background "peach puff")))))
