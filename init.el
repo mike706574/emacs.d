@@ -105,6 +105,10 @@
 
     ;; fsharp
     fsharp-mode
+
+    web-mode
+
+    column-marker
     ))
 
 (dolist (p my-packages)
