@@ -203,3 +203,5 @@
 ;; Custom faces
 (custom-set-faces
  '(column-marker-3 ((t (:background "peach puff")))))
+
+(menu-bar-mode -1)
