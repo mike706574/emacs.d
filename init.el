@@ -158,6 +158,7 @@
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
+(load "log.el")
 
 ;; Build tools
 (load "maven.el")
