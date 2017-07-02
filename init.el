@@ -186,19 +186,15 @@
 
 ;; Custom variables
 (custom-set-variables
- ;; Haskell
- '(haskell-process-type 'cabal-repl)
-
- ;; Clojure
- '(cljr-favor-prefix-notation nil)
-
  '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
-
+ '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
     ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+ '(haskell-process-type (quote cabal-repl))
+ '(haskell-tags-on-save t)
  '(magit-git-executable "/usr/bin/git"))
 
 ;; Custom faces

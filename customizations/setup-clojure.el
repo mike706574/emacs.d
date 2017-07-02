@@ -73,13 +73,17 @@
 
 (put-clojure-indent 'if-not-let 1) ;; me
 (put-clojure-indent 'handle-exceptions 1) ;; me
+(put-clojure-indent 'handle- 1) ;; me
 (put-clojure-indent 'breakdown 1) ;; me
 (put-clojure-indent 'unpack-response 1) ;; me
 (put-clojure-indent 'with-body 1) ;; me
 (put-clojure-indent 'guard-event 1) ;; me
 
 ;; ClojureScript REPL
-(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+(setq cider-cljs-lein-repl
+      "(do (require 'figwheel-sidecar.repl-api)
+           (figwheel-sidecar.repl-api/start-figwheel!)
+           (figwheel-sidecar.repl-api/cljs-repl))")
 
 ;; When there's an error, show its buffer and switch to it
 (setq cider-show-error-buffer t)
@@ -87,8 +91,7 @@
 
 
 ;; Toggles cider-error buffer pop-up on exceptions
-(defun cider-toggle-auto-select-error-buffer ()
-  (interactive)
+(defun cider-toggle-auto-select-error-buffer ()  (interactive)
   (if cider-auto-select-error-buffer
       (progn
         (setq cider-auto-select-error-buffer nil)

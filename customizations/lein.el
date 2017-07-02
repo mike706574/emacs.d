@@ -18,6 +18,14 @@
   (interactive)
   (lein-in-project (lambda (d) (compile (concat "lein ancient")))))
 
+(defun lein-eastwood ()
+  (interactive)
+  (lein-in-project (lambda (d) (compile (concat "lein eastwood")))))
+
+(defun lein-kibit ()
+  (interactive)
+  (lein-in-project (lambda (d) (compile (concat "lein kibit")))))
+
 (defvar lein-grep-history nil)
 (defun lein-grep (term)
   (interactive

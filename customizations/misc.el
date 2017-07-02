@@ -20,3 +20,6 @@
 ;; Miscellaneous functions
 (defun place-search (term target)
   (grep (concat "grep --color -nriH -e " term " " target)))
+
+;; Magit shortcuts
+(global-set-key (kbd "C-x g") 'magit-status)
