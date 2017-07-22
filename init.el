@@ -190,7 +190,6 @@
 
 ;; Custom variables
 (custom-set-variables
- '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
