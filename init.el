@@ -108,6 +108,10 @@
 
     web-mode
 
+    ;; javascript
+    js2-mode
+    rjsx-mode
+
     column-marker
     ))
 
