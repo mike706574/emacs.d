@@ -20,17 +20,16 @@
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(
-    ido-ubiquitous
-    smex
-    projectile
-    auto-complete
-    idle-highlight-mode
-    powerline
-    company
-    linum-off
+  '(auto-complete
     column-marker
+    company
+    idle-highlight-mode
+    ido-ubiquitous
+    linum-off
     magit
+    powerline
+    projectile
+    smex
 
     ;; lisp
     paredit
@@ -43,16 +42,16 @@
     web-mode
     tagedit
 
-    ;; groovy
-    groovy-mode
-
     ;; clojure
     clojure-mode
-    clojure-mode-extra-font-locking ;; extra syntax highlighting for clojure
-    cider ;; integration with a Clojure REPL
-    ac-cider ;; autocomplete assistance from CIDER
-    clojure-cheatsheet ;; clojure cheatsheet for handy referencing
-    clj-refactor ;; clojure refactoring
+    clojure-mode-extra-font-locking
+    cider
+    ac-cider
+    clojure-cheatsheet
+    clj-refactor
+
+    ;; groovy
+    groovy-mode
 
     ;; haskell
     haskell-mode
@@ -71,6 +70,8 @@
     ;; fsharp
     fsharp-mode
 
+    ;;scala
+    ensime
     ))
 
 (dolist (p my-packages)
