@@ -20,74 +20,39 @@
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(;; makes handling lisp expressions much, much easier
-    ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
+  '(
+    ido-ubiquitous
+    smex
+    projectile
+    auto-complete
+    idle-highlight-mode
+    powerline
+    company
+    linum-off
+    column-marker
+    magit
+
+    ;; lisp
     paredit
 
-    ;; key bindings and code colorization for Clojure
-    ;; https://github.com/clojure-emacs/clojure-mode
-    clojure-mode
+    ;; data formats
+    yaml-mode
+    markdown-mode
 
-    ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
-
-    ;; integration with a Clojure REPL
-    ;; https://github.com/clojure-emacs/cider
-    cider
-
-    ;; autocomplete assistance from CIDER
-    ac-cider
-
-    ;; clojure cheatsheet for handy referencing
-    clojure-cheatsheet
+    ;; web
+    web-mode
+    tagedit
 
     ;; groovy
     groovy-mode
 
-    ;; allow ido usage in as many contexts as possible. see
-    ;; customizations/navigation.el line 23 for a description
-    ;; of ido
-    ido-ubiquitous
-
-    ;; Enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    smex
-
-    ;; project navigation
-    projectile
-
-    ;; edit html tags like sexps
-    tagedit
-
-    ;; git integration
-    magit
-
-    ;; finish your thoughts
-    auto-complete
-
-    ;; highlight matching words while idle
-    idle-highlight-mode
-
-    ;; handle YAML
-    yaml-mode
-
-    ;; handle Markdown
-    markdown-mode
-
-    ;; increment and decrement number easily
-    evil-numbers
-
-    ;; clojure refactoring
-    clj-refactor
-
-    ;; make the mode line look neat
-    powerline
-
-    company
-
-    ;; turn off line numbering sometimes
-    linum-off
+    ;; clojure
+    clojure-mode
+    clojure-mode-extra-font-locking ;; extra syntax highlighting for clojure
+    cider ;; integration with a Clojure REPL
+    ac-cider ;; autocomplete assistance from CIDER
+    clojure-cheatsheet ;; clojure cheatsheet for handy referencing
+    clj-refactor ;; clojure refactoring
 
     ;; haskell
     haskell-mode
@@ -106,9 +71,6 @@
     ;; fsharp
     fsharp-mode
 
-    web-mode
-
-    column-marker
     ))
 
 (dolist (p my-packages)
