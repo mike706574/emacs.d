@@ -30,12 +30,12 @@
     markdown-mode
     paredit
     powerline
+    powershell
     projectile
     smex
     tagedit
-    yaml-mode
-    powershell
     web-mode
+    yaml-mode
 
     ;; clojure
     clojure-mode
