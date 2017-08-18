@@ -20,7 +20,22 @@
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(paredit
+  '(
+    ;; general
+    auto-complete
+    company
+    idle-highlight-mode
+    ido-ubiquitous
+    magit
+    markdown-mode
+    paredit
+    powerline
+    projectile
+    smex
+    tagedit
+    yaml-mode
+    powershell
+    web-mode
 
     ;; clojure
     clojure-mode
@@ -30,37 +45,22 @@
     clj-refactor
     clojure-cheatsheet
 
-    groovy-mode
-
-    ido-ubiquitous
-
-    smex
-    projectile
-    tagedit
-    magit
-    auto-complete
-    idle-highlight-mode
-
-    yaml-mode
-    markdown-mode
-
-    powerline
-    company
-
-    ;; haskell
-    haskell-mode
-    hindent
-
-    erlang
-    elm-mode
-
     ;; elixir
     elixir-mode
     alchemist
 
+    ;; elm
+    elm-mode
+
+    ;; erlang
+    erlang
+
+    ;; f#
     fsharp-mode
-    powershell
-    web-mode
+
+    ;; haskell
+    haskell-mode
+    hindent
 
     ;; javascript
     js2-mode
