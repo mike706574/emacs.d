@@ -8,9 +8,9 @@
 (menu-bar-mode -1)
 
 ;; Show line numbers almost always
-(require 'linum-off)
-(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode markdown-mode))
-(global-linum-mode)
+;; (require 'linum-off)
+;; (setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode markdown-mode))
+;; (global-linum-mode)
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.

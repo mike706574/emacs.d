@@ -20,100 +20,53 @@
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(;; makes handling lisp expressions much, much easier
-    ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
+  '(paredit
 
-    ;; key bindings and code colorization for Clojure
-    ;; https://github.com/clojure-emacs/clojure-mode
+    ;; clojure
     clojure-mode
-
-    ;; extra syntax highlighting for clojure
     clojure-mode-extra-font-locking
-
-    ;; integration with a Clojure REPL
-    ;; https://github.com/clojure-emacs/cider
     cider
-
-    ;; autocomplete assistance from CIDER
     ac-cider
-
-    ;; clojure cheatsheet for handy referencing
+    clj-refactor
     clojure-cheatsheet
 
-    ;; groovy
     groovy-mode
 
-    ;; allow ido usage in as many contexts as possible. see
-    ;; customizations/navigation.el line 23 for a description
-    ;; of ido
     ido-ubiquitous
 
-    ;; Enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
     smex
-
-    ;; project navigation
     projectile
-
-    ;; edit html tags like sexps
     tagedit
-
-    ;; git integration
     magit
-
-    ;; finish your thoughts
     auto-complete
-
-    ;; highlight matching words while idle
     idle-highlight-mode
 
-    ;; handle YAML
     yaml-mode
-
-    ;; handle Markdown
     markdown-mode
 
-    ;; increment and decrement number easily
-    evil-numbers
-
-    ;; clojure refactoring
-    clj-refactor
-
-    ;; make the mode line look neat
     powerline
-
     company
-
-    ;; turn off line numbering sometimes
-    linum-off
 
     ;; haskell
     haskell-mode
     hindent
 
-    ;; erlang
     erlang
+    elm-mode
 
     ;; elixir
     elixir-mode
     alchemist
 
-    ;; elm
-    elm-mode
-
-    ;; fsharp
     fsharp-mode
-
+    powershell
     web-mode
 
     ;; javascript
     js2-mode
     rjsx-mode
-
-    column-marker
     ))
+
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -190,6 +143,10 @@
 
 ;; Custom variables
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-firefox))
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
@@ -198,10 +155,17 @@
     ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
  '(haskell-process-type (quote cabal-repl))
  '(haskell-tags-on-save t)
- '(magit-git-executable "/usr/bin/git"))
+ '(magit-git-executable "/usr/bin/git")
+ '(package-selected-packages
+   (quote
+    (powershell yaml-mode web-mode tagedit smex rjsx-mode projectile powerline markdown-mode magit ido-ubiquitous idle-highlight-mode hindent haskell-mode groovy-mode fsharp-mode evil-numbers erlang elm-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor alchemist ac-cider))))
 
 ;; Custom faces
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(column-marker-3 ((t (:background "peach puff")))))
 
 (menu-bar-mode -1)
