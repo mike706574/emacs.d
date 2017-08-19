@@ -63,6 +63,3 @@
 
 ;; projectile everywhere!
 (projectile-global-mode)
-
-;; beacon mode everywhere!  It helps you find the cursor.
-;; (beacon-mode 1)

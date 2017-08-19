@@ -31,17 +31,6 @@
     projectile
     smex
 
-    ;; lisp
-    paredit
-
-    ;; data formats
-    yaml-mode
-    markdown-mode
-
-    ;; web
-    web-mode
-    tagedit
-
     ;; clojure
     clojure-mode
     clojure-mode-extra-font-locking
@@ -49,6 +38,14 @@
     ac-cider
     clojure-cheatsheet
     clj-refactor
+
+    ;; docker
+    docker
+    dockerfile-mode
+
+    ;; data
+    yaml-mode
+    markdown-mode
 
     ;; groovy
     groovy-mode
@@ -70,8 +67,22 @@
     ;; fsharp
     fsharp-mode
 
-    ;;scala
+    ;; javascript
+    js2-mode
+    rjsx-mode
+
+    ;; lisp
+    paredit
+
+    ;; python
+    python
+
+    ;; scala
     ensime
+
+    ;; web
+    web-mode
+    tagedit
     ))
 
 (dolist (p my-packages)
@@ -149,7 +160,6 @@
 
 ;; Custom variables
 (custom-set-variables
- '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
