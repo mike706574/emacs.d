@@ -42,6 +42,7 @@
     clojure-mode-extra-font-locking
     cider
     ac-cider
+
     clj-refactor
     clojure-cheatsheet
 
