@@ -61,6 +61,12 @@
     ;; f#
     fsharp-mode
 
+    ;; gradle
+    gradle-mode
+
+    ;; groovy
+    groovy-mode
+
     ;; haskell
     haskell-mode
     hindent
