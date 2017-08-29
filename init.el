@@ -42,9 +42,11 @@
     clojure-mode-extra-font-locking
     cider
     ac-cider
-
     clj-refactor
     clojure-cheatsheet
+
+    ;; docker
+    dockerfile-mode
 
     ;; elixir
     elixir-mode
