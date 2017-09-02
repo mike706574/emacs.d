@@ -26,6 +26,7 @@
     company
     idle-highlight-mode
     ido-ubiquitous
+    linum-off
     magit
     markdown-mode
     paredit
