@@ -75,8 +75,10 @@
     ;; javascript
     js2-mode
     rjsx-mode
-    ))
 
+    ;; rust
+    rust-mode
+    cargo))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
