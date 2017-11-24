@@ -132,6 +132,7 @@
 ;; Build tools
 (load "maven.el")
 (load "lein.el")
+(load "yarn.el")
 
 ;; Hard-to-categorize customizations
 (load "misc.el")
