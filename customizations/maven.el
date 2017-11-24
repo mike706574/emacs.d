@@ -10,9 +10,17 @@
   (interactive)
   (mvn-in-project (lambda (d) (compile "mvn clean install"))))
 
-(defun mvn-updates ()
+(defun mvn-dependency-updates ()
   (interactive)
   (mvn-in-project (lambda (d) (compile "mvn versions:display-dependency-updates"))))
+
+(defun mvn-plugin-updates ()
+  (interactive)
+  (mvn-in-project (lambda (d) (compile "mvn versions:display-plugin-updates"))))
+
+(defun mvn-property-updates ()
+  (interactive)
+  (mvn-in-project (lambda (d) (compile "mvn versions:display-properties-updates"))))
 
 (defun mvn-tree ()
   (interactive)
