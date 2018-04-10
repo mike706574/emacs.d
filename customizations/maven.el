@@ -6,53 +6,45 @@
       (funcall f default-directory)
       (error "Not inside a Maven project!"))))
 
+(defun mvn-command (cmd)
+  (mvn-in-project (lambda (d) (compile (concat "mvn " cmd)))))
+
 (defun mvn-build ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn clean install"))))
+  (mvn-command "clean install"))
 
 (defun mvn-dependency-updates ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn versions:display-dependency-updates"))))
+  (mvn-command "versions:display-dependency-updates"))
 
 (defun mvn-plugin-updates ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn versions:display-plugin-updates"))))
+  (mvn-command "versions:display-plugin-updates"))
 
 (defun mvn-property-updates ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn versions:display-properties-updates"))))
+  (mvn-command "versions:display-properties-updates"))
 
 (defun mvn-tree ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn dependency:tree"))))
+  (mvn-command "dependency:tree"))
 
 (defun mvn-tree-verbose ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn dependency:tree -Dverbose=true"))))
+  (mvn-command "dependency:tree -Dverbose=true"))
 
 (defun mvn-all-tests ()
   (interactive)
-  (mvn-in-project
-   (lambda (d) (compile "mvn test"))))
+  (mvn-command "test"))
 
 (defun mvn-suite ()
   (interactive)
-  (mvn-in-project
-   (lambda (d)
-     (let ((test-name (file-name-base (buffer-file-name))))
-       (compile (concat "mvn -Dtest=" test-name " test"))))))
-
-(defun mvn-clojure-test ()
-  (interactive)
-  (mvn-in-project
-   (lambda (d)
-     (compile "mvn compile && mvn clojure:test"))))
+  (let ((test-name (file-name-base (buffer-file-name))))
+    (mvn-command (concat "mvn -Dtest=" test-name " test"))))
 
 (defun mvn-compile ()
   (interactive)
-  (mvn-in-project
-   (lambda (d)
-     (compile (concat "mvn compile")))))
+  (mvn-command "compile"))
 
 (defvar mvn-test-history nil)
 (defun mvn-test (test)
@@ -82,3 +74,17 @@
   (mvn-in-project
    (lambda (d)
      (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target --exclude-dir=node_modules -nriH -e \"" term "\" " d)))))
+
+(defvar mvn-java-grep-history nil)
+(defun mvn-java-grep (term)
+  (interactive
+   (list
+    (let* ((default-term (car mvn-java-grep-history))
+           (prompt (if (s-blank? default-term)
+                     "Search for: "
+                     (concat "Search string (default \"" default-term "\"): ")))
+           (input (read-from-minibuffer prompt nil nil nil 'mvn-java-grep-history)))
+      (if (s-blank? input) default-term input))))
+  (mvn-in-project
+   (lambda (d)
+     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target --exclude-dir=node_modules --include=*.java -nriH -e \"" term "\" " d)))))

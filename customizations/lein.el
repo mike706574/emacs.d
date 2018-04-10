@@ -6,29 +6,40 @@
       (funcall f default-directory)
       (error "Not inside a Leiningen project!"))))
 
+(defun lein-command (cmd)
+  (lein-in-project (lambda (d) (compile (concat "lein " cmd)))))
+
 (defun lein-build ()
   (interactive)
-  (lein-in-project (lambda (d) (compile (concat "lein do clean, test, install")))))
+  (lein-command "do clean, test, install"))
 
 (defun lein-tree ()
   (interactive)
-  (lein-in-project (lambda (d) (compile (concat "lein deps :tree")))))
+  (lein-command "deps :tree"))
 
 (defun lein-ancient ()
   (interactive)
-  (lein-in-project (lambda (d) (compile (concat "lein ancient")))))
+  (lein-command "ancient"))
 
-(defun lein-ancient ()
+(defun lein-ancient-plugins ()
   (interactive)
-  (lein-in-project (lambda (d) (compile (concat "lein ancient")))))
+  (lein-command "ancient :plugins"))
 
 (defun lein-eastwood ()
   (interactive)
-  (lein-in-project (lambda (d) (compile (concat "lein eastwood")))))
+  (lein-command "eastwood"))
+
+(defun lein-eastwood-unused-ns ()
+  (interactive)
+  (lein-command "eastwood '{:linters [:unused-namespaces]}'"))
 
 (defun lein-kibit ()
   (interactive)
-  (lein-in-project (lambda (d) (compile (concat "lein kibit")))))
+  (lein-command "kibit"))
+
+(defun lein-yagni ()
+  (interactive)
+  (lein-command "yagni"))
 
 (defvar lein-grep-history nil)
 (defun lein-grep (term)

@@ -4,15 +4,22 @@
   (unless (equal "/" dir)
     (file-name-directory (directory-file-name dir))))
 
-(defun find-file-upwards (current-dir file-name)
-  (let ((file (concat current-dir file-name))
-        (parent-dir (parent-directory (expand-file-name current-dir))))
-    (if (file-exists-p file)
-        file
-      (when parent-dir
-        (find-file-upwards parent-dir file-name)))))
+(defun first-matching-file (dir re)
+  (seq-some
+   (lambda (file)
+     (when (string-match re file)
+       file))
+   (directory-files dir nil nil t)))
 
-(defun find-containing-directory-upwards (file-name)
-  (let ((file-path (find-file-upwards (buffer-file-name) file-name)))
+(defun find-file-upwards (current-dir file-re)
+  (let* ((parent-dir (parent-directory (expand-file-name current-dir)))
+        (file (first-matching-file parent-dir file-re)))
+    (if file
+        (concat parent-dir file)
+      (when parent-dir
+        (find-file-upwards parent-dir file-re)))))
+
+(defun find-containing-directory-upwards (file-re)
+  (let ((file-path (find-file-upwards (buffer-file-name) file-re)))
     (when file-path
       (parent-directory file-path))))
