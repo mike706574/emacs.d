@@ -71,13 +71,24 @@
 (put-clojure-indent 'fdef 1)    ;; clojure.spec
 (put-clojure-indent 'for-all 1) ;; clojure.test.check
 
-(put-clojure-indent 'if-not-let 1) ;; me
-(put-clojure-indent 'handle-exceptions 1) ;; me
-(put-clojure-indent 'handle- 1) ;; me
-(put-clojure-indent 'breakdown 1) ;; me
-(put-clojure-indent 'unpack-response 1) ;; me
-(put-clojure-indent 'with-body 1) ;; me
-(put-clojure-indent 'guard-event 1) ;; me
+;; me
+(put-clojure-indent 'if-not-let 1)
+(put-clojure-indent 'handle-exceptions 1)
+(put-clojure-indent 'handle- 1)
+(put-clojure-indent 'breakdown 1)
+(put-clojure-indent 'unpack-response 1)
+(put-clojure-indent 'with-body 1)
+(put-clojure-indent 'guard-event 1)
+(put-clojure-indent 'ok-> 1)
+(put-clojure-indent 'if-ok 1)
+;(put-clojure-indent 'response/map 1)
+;(put-clojure-indent 'response/rescue 1)
+;(put-clojure-indent 'response/chain 1)
+; (put-clojure-indent 'chain 4)
+(put-clojure-indent 'continue 1)
+(put-clojure-indent 'continue-let 1)
+
+
 
 ;; ClojureScript REPL
 (setq cider-cljs-lein-repl
