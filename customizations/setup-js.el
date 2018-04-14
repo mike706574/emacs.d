@@ -1,5 +1,6 @@
 ;; javascript / html
 (add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.mjs$" . rjsx-mode))
 (add-hook 'js-mode-hook 'subword-mode)
 (add-hook 'html-mode-hook 'subword-mode)
 
@@ -22,3 +23,5 @@
             (setq coffee-cleanup-whitespace nil)))
 (custom-set-variables
  '(coffee-tab-width 2))
+
+(setq js-indent-level 2)
