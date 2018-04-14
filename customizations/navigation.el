@@ -63,3 +63,6 @@
 
 ;; projectile everywhere!
 (projectile-global-mode)
+
+(setq projectile-globally-ignored-directories
+      (cons "docs" projectile-globally-ignored-directories))
