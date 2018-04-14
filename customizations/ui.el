@@ -78,5 +78,27 @@
 
 ;; If we're using a graphical display, make it pretty
 (when (display-graphic-p)
-    (load-theme 'leuven t)
+    (load-theme 'blackboard t)
     (powerline-default-theme))
+
+(defun disable-all-themes ()
+  (mapcar
+   (lambda (theme) (funcall 'disable-theme theme))
+   (custom-available-themes)))
+
+;; make it easy to switch back and forth depending on light conditions
+(defun bright-theme ()
+  (interactive)
+  (progn
+    (disable-all-themes)
+    (load-theme 'leuven t)
+    (set-default-font "Menlo 12")))
+
+(defun dark-theme ()
+  (interactive)
+  (progn
+    (disable-all-themes)
+    (load-theme 'blackboard t)
+    (set-default-font "Menlo 12")))
+
+(set-default-font "Menlo 12")
