@@ -4,6 +4,7 @@
              '("melpa-stable" . "http://stable.melpa.org/packages/") t )
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
@@ -24,6 +25,7 @@
     ;; general
     auto-complete
     company
+    exec-path-from-shell
     idle-highlight-mode
     ido-ubiquitous
     linum-off
@@ -44,7 +46,6 @@
     cider
     ac-cider
     clj-refactor
-    clojure-cheatsheet
 
     ;; docker
     dockerfile-mode
@@ -55,6 +56,10 @@
 
     ;; elm
     elm-mode
+
+    ;; Python
+    python-mode
+    elpy
 
     ;; erlang
     erlang
@@ -133,6 +138,7 @@
 (load "maven.el")
 (load "lein.el")
 (load "yarn.el")
+(load "dotnet.el")
 
 ;; Hard-to-categorize customizations
 (load "misc.el")
@@ -155,23 +161,29 @@
 (put 'erase-buffer 'disabled nil)
 
 ;; Custom variables
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "open -a Google\ Chrome")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(browse-url-browser-function (quote browse-url-firefox))
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+    ("d5b121d69e48e0f2a84c8e4580f0ba230423391a78fcb4001ccb35d02494d79e" "d6922c974e8a78378eacb01414183ce32bc8dbf2de78aabcc6ad8172547cb074" "cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+ '(fci-rule-color "#383838")
  '(haskell-process-type (quote cabal-repl))
  '(haskell-tags-on-save t)
  '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    (quote
-    (powershell yaml-mode web-mode tagedit smex rjsx-mode projectile powerline markdown-mode magit ido-ubiquitous idle-highlight-mode hindent haskell-mode groovy-mode fsharp-mode evil-numbers erlang elm-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor alchemist ac-cider))))
+    (dotnet blackboard-theme elpy cyberpunk-theme tidy typescript-mode dirtree csharp-mode maven-test-mode ac-cider yaml-mode web-mode tagedit smex rjsx-mode projectile powershell powerline markdown-mode magit linum-off jenkins ido-ubiquitous idle-highlight-mode hindent helm haskell-mode groovy-mode gradle-mode fsharp-mode exec-path-from-shell erlang elm-mode dockerfile-mode clojure-mode-extra-font-locking clj-refactor cargo auto-complete alchemist))))
 
 ;; Custom faces
 (custom-set-faces
