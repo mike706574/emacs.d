@@ -7,4 +7,6 @@ cider-history
 projectile-bookmarks.eld
 customizations/secret.el
 ido.last
+ido.last~
+elpa
 elpa/archives/
